@@ -22,7 +22,7 @@ frame:SetScript("OnEvent", function(self, event, ...)
         -- Check if Rhonin is the one yelling the specific line
         if sender == "Rhonin" and msg == rhoninYell then
             -- Make the player yell the same line
-            RunMacroText("/y " .. rhoninYell)
+            SendChatMessage(rhoninYell, "YELL")
         end
     end
 end)
