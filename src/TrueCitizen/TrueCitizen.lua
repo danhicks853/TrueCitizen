@@ -37,8 +37,15 @@ frame:SetScript("OnEvent", function(self, event, ...)
                     
                     -- If this is the last line and player is Mithrix, add a special message
                     if yell == rhoninYells[#rhoninYells] and UnitName("player") == "Mithrix" then
-                        C_Timer.After(2, function()
-                            SendChatMessage("Thanks for this addon, Drom!", "YELL")
+                        local delay = 2  -- 2 second delay
+                        local elapsed = 0
+                        local f = CreateFrame("Frame")
+                        f:SetScript("OnUpdate", function(self, addTime)
+                            elapsed = elapsed + addTime
+                            if elapsed >= delay then
+                                SendChatMessage("Thanks for this addon, Drom!", "YELL")
+                                self:SetScript("OnUpdate", nil)
+                            end
                         end)
                     end
                     break
