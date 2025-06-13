@@ -11,21 +11,13 @@ local rhoninYells = {
     "Cold logic deemed our world not worth saving. Cold logic, however, does not account for the power of free will. It's up to each of us to prove this is a world worth saving.",
     "That our lives... our lives are worth living."
 }
-local inDalaran = false
-
 -- Create the main frame
 local frame = CreateFrame("FRAME", "TrueCitizenFrame")
-frame:RegisterEvent("PLAYER_ENTERING_WORLD")
-frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
 frame:RegisterEvent("CHAT_MSG_MONSTER_YELL")
 
 -- Event handler
 frame:SetScript("OnEvent", function(self, event, ...)
-    if event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED_NEW_AREA" then
-        -- Check if player is in Dalaran (Northrend)
-        local currentZone = GetRealZoneText()
-        inDalaran = (currentZone == "Dalaran")
-    elseif event == "CHAT_MSG_MONSTER_YELL" and inDalaran then
+    if event == "CHAT_MSG_MONSTER_YELL" then
         local msg, sender = ...
         -- Check if Rhonin is the one yelling any of his speech lines
         if sender == "Rhonin" then
@@ -68,10 +60,7 @@ SlashCmdList["TRUECITIZEN"] = function(msg)
         print("|cff33ff99TrueCitizen|r: Test yell sent!")
     elseif cmd == "status" then
         -- Show status information
-        print("|cff33ff99TrueCitizen|r: " .. (inDalaran and "In Dalaran" or "Not in Dalaran"))
-        if inDalaran then
-            print("Will yell along with Rhonin when he gives his speech.")
-        end
+        print("|cff33ff99TrueCitizen|r: Active and ready to yell with Rhonin!")
     else
         -- Show help
         print("|cff33ff99TrueCitizen Commands:|r")
