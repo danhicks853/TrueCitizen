@@ -1,0 +1,8 @@
+## Interface: 30300
+## Title: TrueCitizen
+## Notes: Yells along with Rhonin in Dalaran
+## Author: YourName
+## Version: 1.0
+## Dependencies:
+
+TrueCitizen.lua
