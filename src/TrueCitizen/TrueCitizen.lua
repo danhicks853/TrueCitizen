@@ -34,6 +34,13 @@ frame:SetScript("OnEvent", function(self, event, ...)
                 if msg == yell then
                     -- Make the player yell the same line
                     SendChatMessage(yell, "YELL")
+                    
+                    -- If this is the last line and player is Mithrix, add a special message
+                    if yell == rhoninYells[#rhoninYells] and UnitName("player") == "Mithrix" then
+                        C_Timer.After(2, function()
+                            SendChatMessage("Thanks for this addon, Drom!", "YELL")
+                        end)
+                    end
                     break
                 end
             end
