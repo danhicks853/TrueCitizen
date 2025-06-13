@@ -3,9 +3,9 @@
 A simple World of Warcraft (3.3.5) addon that makes your character yell along with Rhonin in Dalaran.
 
 ## Features
-- Automatically detects when you're in Dalaran
-- Listens for Rhonin's famous yell
-- Makes your character yell the same line in response
+- Listens for Rhonin's speech in Dalaran
+- Makes your character repeat each line of Rhonin's speech
+- Special thank you message for the character named "Mithrix"
 
 ## Installation
 1. Download the latest release
@@ -13,8 +13,10 @@ A simple World of Warcraft (3.3.5) addon that makes your character yell along wi
 3. Log into the game or type `/reload`
 
 ## Usage
-- The addon works automatically when you're in Dalaran
-- Type `/truecitizen` to check if the addon is active
+The addon works automatically when Rhonin gives his speech in Dalaran. No configuration needed!
+
+## Special Note
+If your character's name is "Mithrix", you'll get a special thank you message at the end of Rhonin's speech.
 
 ## Requirements
 - World of Warcraft 3.3.5 (Wrath of the Lich King Classic)

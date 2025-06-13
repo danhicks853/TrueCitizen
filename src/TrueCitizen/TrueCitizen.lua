@@ -46,26 +46,3 @@ frame:SetScript("OnEvent", function(self, event, ...)
         end
     end
 end)
-
--- Slash command for testing and control
-SLASH_TRUECITIZEN1 = "/truecitizen"
-SLASH_TRUECITIZEN2 = "/tc"  -- Add an alias for convenience
-SlashCmdList["TRUECITIZEN"] = function(msg)
-    local cmd = strlower(strtrim(msg or ""))
-    
-    if cmd == "test" then
-        -- Test the yell functionality
-        local testMsg = "Testing TrueCitizen addon!"
-        SendChatMessage(testMsg, "YELL")
-        print("|cff33ff99TrueCitizen|r: Test yell sent!")
-    elseif cmd == "status" then
-        -- Show status information
-        print("|cff33ff99TrueCitizen|r: Active and ready to yell with Rhonin!")
-    else
-        -- Show help
-        print("|cff33ff99TrueCitizen Commands:|r")
-        print("|cff33ff99/truecitizen test|r - Test the yell functionality")
-        print("|cff33ff99/truecitizen status|r - Show addon status")
-        print("|cff33ff99/truecitizen help|r - Show this help")
-    end
-end
